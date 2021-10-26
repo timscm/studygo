@@ -50,6 +50,8 @@ func dispatchCoin() (left int) {
 
 func main() {
 	left := dispatchCoin()
-	fmt.Println(distribution)
 	fmt.Println("剩下: ", left)
+	for k, v := range distribution {
+		fmt.Printf("%s: %d\n", k, v)
+	}
 }
