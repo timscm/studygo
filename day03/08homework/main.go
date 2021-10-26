@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 /*
@@ -28,22 +27,21 @@ var (
 func dispatchCoin() (left int) {
 	var total int
 	for _, user := range users {
-		if strings.Contains(user, "e") || strings.Contains(user, "E") {
-			distribution[user] += 1
-			total += 1
-		}
-		if strings.Contains(user, "i") || strings.Contains(user, "I") {
-			distribution[user] += 2
-			total += 2
-		}
-		if strings.Contains(user, "o") || strings.Contains(user, "O") {
-
-			distribution[user] += 3
-			total += 3
-		}
-		if strings.Contains(user, "u") || strings.Contains(user, "U") {
-			distribution[user] += 4
-			total += 4
+		for _, c := range user {
+			switch c {
+			case 'e', 'E':
+				distribution[user] += 1
+				total += 1
+			case 'i', 'I':
+				distribution[user] += 2
+				total += 2
+			case 'o', 'O':
+				distribution[user] += 3
+				total += 3
+			case 'u', 'U':
+				distribution[user] += 4
+				total += 4
+			}
 		}
 	}
 	left = coins - total
@@ -52,6 +50,6 @@ func dispatchCoin() (left int) {
 
 func main() {
 	left := dispatchCoin()
-	fmt.Println("fen")
+	fmt.Println(distribution)
 	fmt.Println("剩下: ", left)
 }
