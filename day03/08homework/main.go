@@ -52,6 +52,6 @@ func dispatchCoin() (left int) {
 
 func main() {
 	left := dispatchCoin()
-	fmt.Println(distribution)
+	fmt.Println("")
 	fmt.Println("剩下: ", left)
 }
