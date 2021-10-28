@@ -17,8 +17,9 @@ func showMenu() {
 
 func main() {
 
-	var mgr manager
-	mgr.allStudents = make(map[int64]*student, 40)
+	var mgr manager = manager{
+		allStudents: make(map[int64]*student), 40,
+	}
 
 	for {
 		showMenu()
