@@ -27,6 +27,10 @@ import (
 	"github.com/timscm/studygo/calc"
 )
 
+func init() {
+	fmt.Println("init in main...")
+}
+
 func main() {
 	ret := calc.Add(1, 2)
 	fmt.Println("ret: ", ret)
