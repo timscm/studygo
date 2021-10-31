@@ -1,7 +1,7 @@
 package main
 
 /*
-
+export GOPROXY=https://goproxy.cn
 export -n GOPROXY
 unset GOPROXY
 
