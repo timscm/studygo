@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"os"
 )
 
@@ -59,7 +60,18 @@ func bufioread() {
 	}
 }
 
+func ioutilread() {
+	content, err := ioutil.ReadFile("./main.go")
+	if err != nil {
+		fmt.Printf("read file failed, err:%v\n", err)
+		return
+	}
+	fmt.Println(string(content))
+	fmt.Printf("%T\n", content)
+}
+
 func main() {
 	// osopenread()
-	bufioread()
+	// bufioread()
+	ioutilread()
 }
